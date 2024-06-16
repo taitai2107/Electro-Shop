@@ -1,0 +1,11 @@
+const express = require("express");
+const router = express.Router();
+const product = require("../controllers/productController");
+let cloud = require("../middleware/cloudinary");
+router.get("/getAll", product.getAllProducts);
+router.get("/getById/:productId", product.getDeltailProducts);
+router.get("/getCate", product.getCategoryProduct);
+router.get("/getCateById/:CateId", product.getCategoryProductById);
+router.delete("/delete/:productid", product.delProduct);
+router.post("/create", cloud.single("image"), product.createProduct);
+module.exports = router;

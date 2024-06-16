@@ -1,0 +1,34 @@
+#### Ưu Điểm:
+
+1. Hiệu Quả Nén Cao:
+    - Tiết Kiệm Dung Lượng: JPEG giảm đáng kể dung lượng tệp tin mà vẫn giữ được hình ảnh có chất lượng tốt đối với nhiều ứng dụng.
+    - Tiết Kiệm Băng Thông: Việc giảm kích thước tệp giúp tiết kiệm băng thông khi truyền tải ảnh qua internet hoặc qua các thiết bị mạng.
+
+2. Khả Năng Tương Thích Rộng Rãi:
+    - Định Dạng Phổ Biến: JPEG được hỗ trợ rộng rãi bởi các thiết bị phần cứng và phần mềm, từ máy ảnh số, điện thoại thông minh, đến các trình duyệt web và phần mềm chỉnh sửa ảnh.
+
+3. Linh Hoạt và Đa Dạng Sử Dụng:
+    - Nhiều Ứng Dụng: JPEG thích hợp cho nhiều loại ảnh khác nhau, từ ảnh chụp hàng ngày, ảnh đồ họa, đến ảnh trên các website thương mại điện tử, album ảnh số.
+    - Điều Chỉnh Chất Lượng: JPEG cho phép người dùng điều chỉnh mức độ nén - tăng độ nén để giảm kích thước tệp hoặc giảm độ nén để giữ chất lượng hình ảnh cao hơn.
+
+4. Hiểu Biết và Áp Dụng Dễ Dàng:
+    - Đơn Giản và Hiệu Quả: Quy trình nén của JPEG khá đơn giản và trực tiếp, phù hợp với những người dùng không chuyên sâu về kỹ thuật.
+
+#### Nhược Điểm:
+
+1. Mất Dữ Liệu (Lossy):
+    - Chất Lượng Giảm: Quá trình nén JPEG là quá trình mất dữ liệu, dẫn đến việc chất lượng hình ảnh sẽ giảm đi so với ảnh gốc. Điều này đặc biệt rõ ràng khi nén ở mức độ cao.
+    - Hiện Tượng Khối (Blocking Artifacts): Khi nén ảnh ở mức độ cao, có thể xuất hiện các hiện tượng khối (block artifacts) làm giảm chất lượng hình ảnh.
+
+2. Không Tốt Cho Các Ảnh Đòi Hỏi Chi Tiết Cao:
+    - Ảnh Vô Cấp: JPEG không phù hợp cho các hình ảnh đòi hỏi độ chi tiết cao như bản vẽ kỹ thuật, ảnh chụp màn hình, hoặc đồ họa vi tính với các đường nét sắc và màu sắc rõ ràng.
+    - Màu Trơn: Các vùng màu trơn và gradients có thể bị dải (banding) khi nén, làm mất đi sự mềm mại và mượt mà của màu sắc gốc.
+
+3. Hiệu Suất Xử Lý:
+    - Tốn Tài Nguyên: Nén JPEG mặc dù hiệu quả nhưng cần khá nhiều tài nguyên tính toán, có thể gây khó khăn cho các thiết bị có khả năng xử lý hạn chế.
+    - Thời Gian Xử Lý: Việc xử lý nén và giải nén chiếm thời gian đáng kể, đặc biệt là khi xử lý số lượng lớn ảnh hoặc ảnh có độ phân giải cao.
+
+4. Không Thích Hợp Cho Ảnh Cần Chỉnh Sửa Nhiều Lần:
+    - Giảm Chất Lượng Qua Mỗi Lần Lưu: Nếu hình ảnh JPEG được chỉnh sửa và lưu lại nhiều lần, mỗi lần lưu sẽ tiếp tục mất mát thêm dữ liệu, dẫn đến suy giảm đáng kể về chất lượng qua thời gian.
+
+### Tổng Kết

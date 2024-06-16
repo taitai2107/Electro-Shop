@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.maxWidth {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.text-primary-a {
+  color: #1867c0 !important;
+  cursor: pointer !important;
+}
+
+.c-text-yellow {
+  color: #fdd602 !important;
+}
+
+.c-text-yellow-2 {
+  color: #fda902 !important;
+}
+
+.text-primary-a:hover {
+  color: #ea5d34 !important;
+}
+
+.text-a:hover {
+  color: #ea5d34 !important;
+  cursor: pointer;
+}
+
+.text-a-primary:hover {
+  color: #1867c0 !important;
+  cursor: pointer;
+}
+
+.text-price-red {
+  color: #f86666 !important;
+}
+.required {
+  color: #f86666 !important;
+}
+.text-phone-green {
+  color: #7a9c59 !important;
+}
+
+.cp {
+  cursor: pointer !important;
+}
+
+.c-readonly .v-input__control {
+  background-color: rgb(234, 234, 234) !important;
+}
+
+.c-label-editor {
+  font-size: 16px !important;
+  opacity: 0.7 !important;
+}
+
+.fs-10 {
+  font-size: 10px !important;
+}
+.fs-12 {
+  font-size: 12px !important;
+}
+.fs-13 {
+  font-size: 13px !important;
+}
+.fs-14 {
+  font-size: 14px !important;
+}
+.fs-15 {
+  font-size: 15px !important;
+}
+.fs-16 {
+  font-size: 16px !important;
+}
+.fs-17 {
+  font-size: 17px !important;
+}
+.fs-18 {
+  font-size: 18px !important;
+}
+.fs-19 {
+  font-size: 19px !important;
+}
+.fs-20 {
+  font-size: 20px !important;
+}
+.fs-21 {
+  font-size: 21px !important;
+}
+.fs-22 {
+  font-size: 22px !important;
+}
+.fs-25 {
+  font-size: 25px !important;
+}
+.fs-27 {
+  font-size: 27px !important;
+}
+
+.bg-pink {
+  background-color: #fffbe5 !important;
+}
+
+.bg-footer {
+  background-color: #dbdbdb !important;
+}
+.bor-gray {
+  border: 1px solid #ddd !important;
+}
+
+.is-divider {
+  height: 3px;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 1em 0 1em;
+  width: 100%;
+  max-width: 30px;
+}
+.full-divider {
+  height: 3px;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 1em 0 1em;
+  width: 100%;
+}
+.full-divider-small {
+  height: 1px;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 1em 0 1em;
+  width: 100%;
+}
+
+.text-limit-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Hiển thị 2 dòng */
+  -webkit-box-orient: vertical;
+}
+
+.op-5 {
+  opacity: 0.5 !important;
+}
+.op-7 {
+  opacity: 0.7 !important;
+}
+
+/* Res */
+
+.only-than-md {
+}
+
+@media (max-width: 960px) {
+  .only-than-md {
+    display: none;
+  }
+}
+
+
+
+.text-blue-green{
+  color: #4cd0dc !important;
+}
+
+.text-header{
+  color: #aaaaaa !important;
+}
+
+.text-header-a{
+  color: #aaaaaa !important;
+  cursor: pointer;
+}
+
+.text-header-a:hover{
+  color: #4cd0dc !important;
+}
+
+.text-a-blue-green:hover{
+  color: #4cd0dc !important;
+}
+
+
+.text-login-a{
+  color: #6a6a6a !important;
+  cursor: pointer;
+}
+
+.text-login-a:hover{
+  color: #4cd0dc !important;
+}
+
+.text-gray {
+  color: #aaaaaa !important;
+
+}
+
+.title-breadcrumbs {
+  border-bottom: 2px solid #01c4c4;
+  padding-bottom: 5px;
+}
+
+
+.home-link{
+  color: #aaaaaa !important;
+  cursor: pointer;
+
+}
+.home-link:hover{
+  color: #ff0000 !important;
+
+}
+
+/*  */
+.steps {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.steps li {
+  margin-bottom: 5px;
+  float: left;
+  text-align: center;
+  font-size: 13px;
+  border-bottom: 2px solid #aaaaaa;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  font-weight: bold;
+  min-width: 200px;
+}
+
+.steps li span {
+  display: block;
+  color: #aaaaaa;
+  padding: 5px 0;
+}
+
+.steps li.active span {
+  color: #01c4c4;
+}
+
+
+.text-blue-green-a{
+  color: #4cd0dc !important;
+  cursor: pointer;
+
+}
+.text-blue-green-a:hover{
+  color: #111 !important;
+
+}
+
+.steps li span {
+  display: block;
+  /* color: #aaaaaa; */
+  padding: 5px 0;
+}
+
+.steps li span.step-number {
+  display: block;
+  text-align: center;
+  left: 0;
+  position: absolute;
+  z-index: 9999;
+  font-weight: bold;
+  width: 100%;
+}
+
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: "Glyphicons Halflings";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.steps li span.step-number a {
+  padding: 3px 7px;
+  background-color: #d0d0d0;
+  border: 1px solid #aaaaaa;
+  color: #ffffff;
+  border-radius: 20px;
+}
+
+.steps li.active span.step-number a {
+  border-color: #01c4c4;
+  color: #ffffff;
+  background-color: #01c4c4;
+}
+
+/*  */
