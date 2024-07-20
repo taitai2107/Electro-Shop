@@ -3,6 +3,8 @@ const app = express();
 require("dotenv").config();
 const useCORS = require("./src/config/CORS");
 // require("express-async-errors");
+// const testConnect = require("./src/config/testConnect");
+// testConnect();
 const useRouter = require("./src/router/index");
 
 app.use(express.urlencoded({ extended: true }));

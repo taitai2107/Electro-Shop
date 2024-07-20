@@ -9,7 +9,9 @@ const { createToken } = require("../helpers/tokenJwtHelpers");
 let jwt = require("jsonwebtoken");
 const { Op, where } = require("sequelize");
 const { validatePhone } = require("../helpers/validateHelper");
-
+const sendMailT = require("../helpers/sendMail");
+const client = require("../config/redisConfig");
+const validateCode = require("../helpers/validateCodeForgotPass");
 module.exports = {
   db,
   hashPass,
@@ -21,4 +23,7 @@ module.exports = {
   Op,
   where,
   validatePhone,
+  sendMailT,
+  client,
+  validateCode,
 };

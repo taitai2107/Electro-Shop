@@ -3,6 +3,7 @@ const router = express.Router();
 const product = require("../controllers/productController");
 let cloud = require("../middleware/cloudinary");
 router.get("/getAll", product.getAllProducts);
+router.get("/getProduct", product.getProducts);
 router.get("/getById/:productId", product.getDeltailProducts);
 router.get("/getCate", product.getCategoryProduct);
 router.get("/getCateById/:CateId", product.getCategoryProductById);

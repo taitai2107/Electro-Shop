@@ -1,3 +1,4 @@
+const { Json } = require("sequelize/lib/utils");
 const {
   db,
   hashPass,
@@ -8,11 +9,21 @@ const {
   jwt,
   Op,
   where,
+  client,
 } = require("./importLib");
 class servicesProduct {
   constructor() {}
   async handleGetAllProduct() {
     try {
+      const productKey = "all product";
+      const cachesProduct = await client.get(productKey);
+      if (cachesProduct) {
+        console.log(`lấy dữ liệu trong cache`);
+        return {
+          EC: 0,
+          EM: JSON.parse(cachesProduct),
+        };
+      }
       const products = await db.Products.findAll({
         include: [
           {
@@ -27,13 +38,50 @@ class servicesProduct {
           },
         ],
       });
-      console.log(products);
       if (!products) {
         handleCustomError([`Get products fail !`]);
       }
+      await client.setEx(productKey, 210, JSON.stringify(products));
       return {
         EC: 0,
         EM: products,
+      };
+    } catch (error) {
+      processError(error);
+    }
+  }
+  async handleGetProduct({ page, limit }) {
+    try {
+      const offset = (page - 1) * limit;
+      const products = await db.Products.findAndCountAll({
+        limit: parseInt(limit),
+        offset: parseInt(offset),
+
+        include: [
+          {
+            model: db.Categories,
+
+            attributes: ["categoryId", "categoryName"],
+          },
+          {
+            model: db.Brands,
+
+            attributes: ["brandId", "brandName"],
+          },
+        ],
+      });
+      if (!products) {
+        handleCustomError([`Get products fail !`]);
+      }
+      const data = {
+        totalItems: products.count,
+        totalPages: Math.ceil(products.count / limit),
+        currentPage: page,
+        data: products.rows,
+      };
+      return {
+        EC: 0,
+        EM: data,
       };
     } catch (error) {
       processError(error);
@@ -140,7 +188,7 @@ class servicesProduct {
   }
   async handleAddProduct(
     { name, description, price, stock, categoryId, brandId },
-    { path }
+    { path } = {}
   ) {
     try {
       let result = await db.Products.create({
@@ -150,7 +198,7 @@ class servicesProduct {
         stock: stock,
         categoryId: categoryId,
         brandId: brandId,
-        image: path,
+        image: path ? path : null,
       });
       if (result)
         return {

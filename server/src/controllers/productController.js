@@ -10,6 +10,14 @@ class ProductController {
       next(error);
     }
   }
+  async getProducts(req, res, next) {
+    try {
+      let response = await servicesProduct.handleGetProduct(req.query);
+      res.status(200).json(response);
+    } catch (error) {
+      next(error);
+    }
+  }
   async getDeltailProducts(req, res, next) {
     try {
       let response = await servicesProduct.handleGetDeltailProduct(req.params);

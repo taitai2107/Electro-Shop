@@ -8,9 +8,28 @@ const {
   jwt,
   Op,
   where,
+  sendMailT,
+  validateCode,
 } = require("./importLib");
 class servicesAuth {
   constructor() {}
+
+  generateCode() {
+    const nums = "0123456789";
+    let res = "";
+    for (let i = 0; i < 5; i++) {
+      res += nums[Math.floor(Math.random() * nums.length)];
+    }
+    return res;
+  }
+  generatePass() {
+    const abc = "qwertyuiopasdfghjklzxcvbnm";
+    let res = "";
+    for (let i = 0; i < 15; i++) {
+      res += abc[Math.floor(Math.random() * abc.length)];
+    }
+    return res;
+  }
   async handleLogin({ valueInput, password }) {
     // console.log("Received Value Input:", valueInput);
     // console.log("Received Password:", password);
@@ -69,5 +88,80 @@ class servicesAuth {
       processError(error);
     }
   }
+  async handleForgotPassword({ email }) {
+    try {
+      const user = await db.Users.findOne({
+        where: {
+          email: email,
+        },
+      });
+      // console.log("check", user);
+      if (!user) {
+        handleCustomError(["email not found !"]);
+      }
+
+      let code = this.generateCode();
+      await sendMailT(code, user.email);
+
+      return {
+        EC: 0,
+        EM: "sendMailSuccess!",
+      };
+    } catch (error) {
+      processError(error);
+    }
+  }
+  async handleAuthForgotPass({ email, otp }) {
+    try {
+      const newPass = this.generatePass();
+
+      let user = await db.Users.findOne({
+        where: {
+          email,
+        },
+      });
+
+      if (!user) {
+        handleCustomError(["email not found !"]);
+      } else {
+        const isValidCode = await validateCode(email, otp);
+
+        if (isValidCode) {
+          const newHashPassword = hashPass.hashPassword(newPass);
+
+          await db.Users.update(
+            {
+              password: newHashPassword,
+            },
+            {
+              where: {
+                email,
+              },
+            }
+          );
+          return {
+            EC: 0,
+            EM: `new your password is ${newPass}`,
+          };
+        }
+      }
+    } catch (error) {
+      processError(error);
+    }
+  }
 }
 module.exports = new servicesAuth();
+// const findByEmail = async () => {
+//   try {
+//     const user = await db.Users.findOne({
+//       where: {
+//         email: "nguyendat7.1998@gmail.com",
+//       },
+//     });
+//     console.log(user.email);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// module.exports = findByEmail;
